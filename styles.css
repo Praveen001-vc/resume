@@ -1,0 +1,292 @@
+﻿:root {
+  --page-bg: #eef4fb;
+  --card: #fefefe;
+  --ink: #101217;
+  --muted: #4f5a67;
+  --line: #d5deea;
+  --sidebar-top: #0f4ea8;
+  --sidebar-bottom: #2ea7cf;
+  --hero: #e2d7d2;
+  --glow: 0 20px 42px rgba(16, 25, 38, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Manrope", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(15, 78, 168, 0.2), transparent 34%),
+    radial-gradient(circle at 88% 94%, rgba(46, 167, 207, 0.2), transparent 30%),
+    var(--page-bg);
+}
+
+.resume {
+  width: min(1000px, 94%);
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  background: var(--card);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--glow);
+}
+
+.sidebar {
+  background: linear-gradient(165deg, var(--sidebar-top), var(--sidebar-bottom));
+  color: #f7fbff;
+  padding: 2rem 1.5rem;
+}
+
+.photo {
+  width: 180px;
+  height: 210px;
+  margin: 0 auto 1.6rem;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.22);
+  background: linear-gradient(145deg, #d9deeb, #b8c7de);
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo span {
+  position: absolute;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #10478f;
+}
+
+.side-block + .side-block {
+  margin-top: 1.8rem;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+.sidebar h2 {
+  margin-bottom: 0.75rem;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+  line-height: 1.45;
+  font-size: 0.96rem;
+}
+
+.contact-list a {
+  color: #f2f8ff;
+  text-decoration: none;
+}
+
+.edu-item + .edu-item {
+  margin-top: 1rem;
+}
+
+.edu-item h3 {
+  font-size: 1.04rem;
+  margin-bottom: 0.15rem;
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: rgba(246, 251, 255, 0.86);
+  margin-bottom: 0.2rem;
+}
+
+.edu-item p {
+  line-height: 1.35;
+}
+
+.skills {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.skills li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.93rem;
+}
+
+.skills i {
+  width: 82px;
+  height: 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.24);
+  position: relative;
+  overflow: hidden;
+}
+
+.skills i::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: var(--level);
+  background: #ffffff;
+  border-radius: inherit;
+}
+
+.content {
+  background: #f7f7f7;
+}
+
+.hero {
+  background: var(--hero);
+  padding: 1.8rem 2rem;
+}
+
+.hero h1 {
+  font-family: "Merriweather", serif;
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  margin-bottom: 0.3rem;
+}
+
+.hero p {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.panel {
+  padding: 1.3rem 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.panel h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.7rem;
+}
+
+.panel h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.panel p,
+.panel li {
+  color: var(--ink);
+  line-height: 1.55;
+  font-size: 1rem;
+}
+
+.company {
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.panel ul {
+  padding-left: 1.3rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: rise 550ms ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 60ms;
+}
+
+.delay-2 {
+  animation-delay: 130ms;
+}
+
+.delay-3 {
+  animation-delay: 210ms;
+}
+
+.delay-4 {
+  animation-delay: 280ms;
+}
+
+.delay-5 {
+  animation-delay: 360ms;
+}
+
+.delay-6 {
+  animation-delay: 440ms;
+}
+
+.delay-7 {
+  animation-delay: 520ms;
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .resume {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    padding: 1.4rem 1.2rem;
+  }
+
+  .content {
+    background: #fafbfc;
+  }
+
+  .hero,
+  .panel {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .resume {
+    width: 96%;
+    margin: 1rem auto;
+    border-radius: 14px;
+  }
+
+  .photo {
+    width: 150px;
+    height: 180px;
+    border-radius: 22px;
+  }
+
+  .sidebar h2,
+  .panel h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 1.35rem;
+  }
+}
