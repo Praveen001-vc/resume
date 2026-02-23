@@ -335,6 +335,14 @@ body::after {
   overflow: hidden;
 }
 
+.hero-block:not(.compact) {
+  grid-template-areas: "main side";
+}
+
+.hero-main {
+  grid-area: main;
+}
+
 .hero-block::before {
   content: "";
   position: absolute;
@@ -470,6 +478,7 @@ body::after {
 }
 
 .hero-side {
+  grid-area: side;
   border-radius: var(--radius-lg);
   padding: 1.1rem;
   color: #f7efe0;
@@ -1141,6 +1150,12 @@ body::after {
 
   .page-wrap {
     width: 94%;
+  }
+
+  .hero-block:not(.compact) {
+    grid-template-areas:
+      "side"
+      "main";
   }
 
   .project-grid,
