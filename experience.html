@@ -45,35 +45,131 @@
     </section>
 
     <section class="section-block reveal delay-2">
-      <h2 class="section-title">Sree Jayanathan Chits Private Limited, Namakkal</h2>
-      <p class="section-subtext">Profit Manager and Collection Head</p>
+      <h2 class="section-title">Work Experience</h2>
       <p class="section-subtext">
-        Managed profit operations and customer collections with strong discipline and clear
-        communication. Maintained a zero-pending customer record for four consecutive months.
+        Click each role to view responsibilities and performance highlights.
       </p>
-    </section>
 
-    <section class="section-block reveal delay-3">
-      <div class="mini-grid">
-        <article class="info-card">
-          <h3>Key Responsibilities</h3>
-          <ul class="bullet-list">
-            <li>Managed collection workflows and customer follow-ups.</li>
-            <li>Handled operational records with accuracy and consistency.</li>
-            <li>Coordinated internal updates to keep financial status clear.</li>
-          </ul>
-        </article>
-        <article class="info-card accent">
-          <h3>Performance Highlight</h3>
+      <div class="experience-switcher" role="tablist" aria-label="Experience roles">
+        <button
+          class="exp-tab is-active"
+          type="button"
+          data-exp-tab="mahiltech"
+          aria-selected="true"
+          aria-controls="exp-panel-mahiltech"
+          id="exp-tab-mahiltech"
+        >
+          <span class="exp-tab-title">MahilTechLab Solutions</span>
+          <span class="exp-tab-meta">Associate Software Engineer</span>
+        </button>
+        <button
+          class="exp-tab"
+          type="button"
+          data-exp-tab="jayanathan"
+          aria-selected="false"
+          aria-controls="exp-panel-jayanathan"
+          id="exp-tab-jayanathan"
+        >
+          <span class="exp-tab-title">Sree Jayanathan Chits Pvt Ltd</span>
+          <span class="exp-tab-meta">Profit Manager and Collection Head | 6 Months</span>
+        </button>
+      </div>
+
+      <div
+        class="exp-panel is-active"
+        data-exp-panel="mahiltech"
+        id="exp-panel-mahiltech"
+        role="tabpanel"
+        aria-labelledby="exp-tab-mahiltech"
+      >
+        <div class="exp-panel-head">
+          <h3>MahilTechLab Solutions</h3>
           <p>
-            Delivered zero pending customer collections for four months while maintaining
-            positive customer communication and process reliability.
+            Building and maintaining production software systems across web, POS, and license
+            management workflows with clean implementation and reliable delivery.
           </p>
-        </article>
+        </div>
+        <div class="mini-grid">
+          <article class="info-card">
+            <h3>Key Responsibilities</h3>
+            <ul class="bullet-list">
+              <li>Develop and maintain Django-based business applications.</li>
+              <li>Implement and improve API, database, and integration workflows.</li>
+              <li>Support release processes for web and desktop deployments.</li>
+            </ul>
+          </article>
+          <article class="info-card accent">
+            <h3>Performance Highlight</h3>
+            <p>
+              Delivered multiple live projects, including MahilMart Web, MahilMart POS, and
+              License Key Manager, with practical business impact.
+            </p>
+          </article>
+        </div>
+      </div>
+
+      <div
+        class="exp-panel"
+        data-exp-panel="jayanathan"
+        id="exp-panel-jayanathan"
+        role="tabpanel"
+        aria-labelledby="exp-tab-jayanathan"
+        hidden
+      >
+        <div class="exp-panel-head">
+          <h3>Sree Jayanathan Chits Private Limited, Namakkal</h3>
+          <p>
+            Managed profit operations and customer collections with strong discipline and clear
+            communication.
+          </p>
+        </div>
+        <div class="mini-grid">
+          <article class="info-card">
+            <h3>Key Responsibilities</h3>
+            <ul class="bullet-list">
+              <li>Managed collection workflows and customer follow-ups.</li>
+              <li>Handled operational records with accuracy and consistency.</li>
+              <li>Coordinated internal updates to keep financial status clear.</li>
+            </ul>
+          </article>
+          <article class="info-card accent">
+            <h3>Performance Highlight</h3>
+            <p>
+              Delivered zero pending customer collections for six months while maintaining
+              positive customer communication and process reliability.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">Praveen V Portfolio</footer>
+  <script>
+    (function () {
+      const tabs = document.querySelectorAll("[data-exp-tab]");
+      const panels = document.querySelectorAll("[data-exp-panel]");
+
+      function activateExperience(target) {
+        tabs.forEach((tab) => {
+          const isActive = tab.getAttribute("data-exp-tab") === target;
+          tab.classList.toggle("is-active", isActive);
+          tab.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+
+        panels.forEach((panel) => {
+          const isActive = panel.getAttribute("data-exp-panel") === target;
+          panel.classList.toggle("is-active", isActive);
+          panel.hidden = !isActive;
+        });
+      }
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", function () {
+          activateExperience(this.getAttribute("data-exp-tab"));
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
